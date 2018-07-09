@@ -7,9 +7,9 @@
 
 This library provides an easy way to manipulate data
 with [ML.net](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
-It implements a subsample of the [Pandas](https://pandas.pydata.org/)'s dataframes.
-It only represents dense datasets but provides usual functionalities such
-expressions with ``[]`` and joins, group by, or sort functionality.
+It implements a subsample of [pandas](https://pandas.pydata.org/)'s dataframes API.
+It only represents dense datasets but provides usual functionalities such as
+expressions with ``[]`` and joins, group by, or sort functionalities.
 Many examples can be found in
 [TestDataManipulation.cs](https://github.com/xadupre/machinelearning_dataframe/blob/master/UnitTests/TestDataManipulation.cs).
 Below, the following examples shows how to interact
