@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.ML;
 using Microsoft.ML.Runtime;
 using Microsoft.ML.Runtime.EntryPoints;
 using Microsoft.ML.Runtime.Data;
+using Transforms = Microsoft.ML.Transforms;
 
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     class GenericScorerPipelineStep : ILearningPipelineDataStep
     {
@@ -172,13 +174,13 @@ namespace Microsoft.ML.Ext.DataManipulation
 
     public class ExtendedPredictionModel
     {
-        private readonly Runtime.EntryPoints.TransformModel _predictorModel;
+        private readonly TransformModel _predictorModel;
         private readonly IHostEnvironment _env;
 
         public ExtendedPredictionModel(Stream stream)
         {
             _env = new TlcEnvironment();
-            _predictorModel = new Runtime.EntryPoints.TransformModel(_env, stream);
+            _predictorModel = new TransformModel(_env, stream);
         }
 
         public TransformModel PredictorModel

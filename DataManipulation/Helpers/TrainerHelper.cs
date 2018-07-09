@@ -6,7 +6,7 @@ using Microsoft.ML.Runtime.CommandLine;
 using Microsoft.ML.Runtime.Internal.Calibration;
 
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     /// <summary>
     /// Extended interface for trainers.

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Microsoft.ML.Runtime.Data;
 
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     /// <summary>
     /// Wraps a column and adds numerical operators.

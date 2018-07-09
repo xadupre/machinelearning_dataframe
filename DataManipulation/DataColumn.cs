@@ -8,7 +8,7 @@ using Microsoft.ML.Runtime.Data;
 using Microsoft.ML.Runtime.Data.Conversion;
 
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     /// <summary>
     /// Implements a dense column container.

@@ -3,7 +3,7 @@
 using System;
 
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     public interface ITUple
     {

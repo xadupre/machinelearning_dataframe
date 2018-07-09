@@ -5,12 +5,13 @@ using System.Text;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using Data = Microsoft.ML.Data;
 using Microsoft.ML.Runtime;
 using Microsoft.ML.Runtime.Data;
 using Microsoft.ML.Runtime.Data.IO;
 
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     /// <summary>
     /// Implements a DataFrame based on a IDataView from ML.net.

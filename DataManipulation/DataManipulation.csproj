@@ -2,18 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Microsoft.ML.Ext.DataManipulation</AssemblyName>
-    <RootNamespace>Microsoft.ML.Ext.DataManipulation</RootNamespace>
+    <AssemblyName>Ext.Microsoft.ML.DataManipulation</AssemblyName>
+    <RootNamespace>Ext.Microsoft.ML.DataManipulation</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.3.0</Version>
-    <Description>This library provides an easy way to manipulate data
-with Microsoft.ML.
-It implements a subsample of the pandas dataframes interface.
-It only represents dense datasets but provides usual functionalities such as
-expressions with ``[]`` and joins, group by, or sort functionalities.</Description>
+    <Description>This library provides an easy way to manipulate data with Microsoft.ML. It implements a subsample of the pandas dataframes interface. It only represents dense datasets but provides usual functionalities such as expressions with ``[]`` and joins, group by, or sort functionalities.</Description>
     <PackageProjectUrl>https://github.com/xadupre/machinelearning_dataframe</PackageProjectUrl>
     <Copyright></Copyright>
     <PackageLicenseUrl>https://github.com/xadupre/machinelearning_dataframe/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageId>Ext.Microsoft.ML.DataManipulation</PackageId>
+    <Authors>Ext.Microsoft.ML.DataManipulation</Authors>
   </PropertyGroup>
 
   <ItemGroup>

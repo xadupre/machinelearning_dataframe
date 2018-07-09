@@ -3,7 +3,7 @@
 using System;
 using Microsoft.ML.Runtime.Data;
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     public static class DataFrameMissingValue
     {

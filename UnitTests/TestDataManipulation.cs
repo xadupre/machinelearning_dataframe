@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using Microsoft.ML.Runtime.Data;
-using Microsoft.ML.Ext.DataManipulation;
+using Ext.Microsoft.ML.DataManipulation;
 using Microsoft.ML.Runtime.Api;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms;
@@ -17,12 +17,6 @@ namespace UnitTests
     [TestClass]
     public class TestDataManipulation
     {
-        #region automated generation
-
-
-
-        #endregion
-
         #region DataFrame IO
 
         [TestMethod]

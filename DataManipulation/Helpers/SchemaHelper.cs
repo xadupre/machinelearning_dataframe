@@ -2,6 +2,7 @@
 
 using System;
 using System.Text;
+using Data = Microsoft.ML.Data;
 using Microsoft.ML.Runtime;
 using Microsoft.ML.Runtime.Data;
 using Microsoft.ML.Runtime.Model;
@@ -9,7 +10,7 @@ using Microsoft.ML.Runtime.CommandLine;
 using Microsoft.ML.Runtime.Data.Conversion;
 
 
-namespace Microsoft.ML.Ext.DataManipulation
+namespace Ext.Microsoft.ML.DataManipulation
 {
     /// <summary>
     /// Helpers about ISchema.
@@ -384,7 +385,7 @@ namespace Microsoft.ML.Ext.DataManipulation
                 {
                     Name = schema.GetColumnName(i),
                     Type = DataKind2DataDataKind(schema.GetColumnType(i).RawKind),
-                    Source = new[] { new ML.Data.TextLoaderRange(i) }
+                    Source = new[] { new Data.TextLoaderRange(i) }
                 };
             }
             return res;
