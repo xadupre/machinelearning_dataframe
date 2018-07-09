@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Microsoft.ML.Runtime.Data;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Implements ISchema interface for this container.

@@ -111,8 +111,8 @@ jobs:
             mkdir -p test-reports/dist
             mkdir -p test-reports/dist/Debug
             mkdir -p test-reports/dist/Release
-            cp -r  DataManipulation/bin/Release/netstandard2.0/Microsoft.ML.Ext.DataManipulation* test-reports/dist/Release
-            cp -r  DataManipulation/bin/Debug/netstandard2.0/Microsoft.ML.Ext.DataManipulation* test-reports/dist/Debug
+            cp -r  DataManipulation/bin/Release/netstandard2.0/Scikit.ML.DataFrame* test-reports/dist/Release
+            cp -r  DataManipulation/bin/Debug/netstandard2.0/Scikit.ML.DataFrame* test-reports/dist/Debug
             
       - store_artifacts:
           path: test-reports

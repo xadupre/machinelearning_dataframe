@@ -6,7 +6,7 @@ using Microsoft.ML.Runtime.CommandLine;
 using Microsoft.ML.Runtime.Internal.Calibration;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Extended interface for trainers.

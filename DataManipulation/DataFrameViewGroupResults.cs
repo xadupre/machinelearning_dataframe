@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     public interface IDataFrameViewGroupResults
     {

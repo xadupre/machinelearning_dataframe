@@ -6,7 +6,7 @@ using System.Linq;
 using Microsoft.ML.Runtime.Data;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Implements grouping functions for dataframe.

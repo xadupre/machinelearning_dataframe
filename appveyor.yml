@@ -36,8 +36,8 @@ after_test:
   - if not exist dist mkdir dist
   - if not exist dist\Release mkdir dist\Release
   - if not exist dist\Debug mkdir dist\Debug
-  - copy DataManipulation\bin\Release\netstandard2.0\Microsoft.ML.Ext.DataManipulation* dist\Release
-  - copy DataManipulation\bin\Debug\netstandard2.0\Microsoft.ML.Ext.DataManipulation* dist\Debug
+  - copy DataManipulation\bin\Release\netstandard2.0\Scikit.ML.DataFrame* dist\Release
+  - copy DataManipulation\bin\Debug\netstandard2.0\Scikit.ML.DataFrame* dist\Debug
 
 artifacts:
   - path: dist

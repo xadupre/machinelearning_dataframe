@@ -3,7 +3,7 @@
 using Microsoft.ML.Runtime.Data;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     public static class ObjectConversion
     {

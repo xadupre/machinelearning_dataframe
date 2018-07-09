@@ -5,7 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Helper for numeric purpose.

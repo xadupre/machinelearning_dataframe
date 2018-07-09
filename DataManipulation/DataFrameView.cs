@@ -8,7 +8,7 @@ using Microsoft.ML.Runtime;
 using Microsoft.ML.Runtime.Data;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     public class DataFrameView : IDataFrameView
     {

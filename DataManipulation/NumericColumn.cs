@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Microsoft.ML.Runtime.Data;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Wraps a column and adds numerical operators.

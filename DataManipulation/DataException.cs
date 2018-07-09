@@ -2,7 +2,7 @@
 
 using System;
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Raised when there is a type mismatch.

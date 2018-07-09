@@ -5,10 +5,9 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.ML.Runtime.Data;
-using Microsoft.ML.Runtime.Data.Conversion;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Implements a dense column container.

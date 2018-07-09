@@ -3,7 +3,7 @@
 using System;
 using Microsoft.ML.Runtime.Data;
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Implements operator for DataFrame for many types.

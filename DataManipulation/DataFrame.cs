@@ -11,7 +11,7 @@ using Microsoft.ML.Runtime.Data;
 using Microsoft.ML.Runtime.Data.IO;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Implements a DataFrame based on a IDataView from ML.net.

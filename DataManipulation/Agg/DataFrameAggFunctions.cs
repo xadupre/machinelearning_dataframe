@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using Microsoft.ML.Runtime.Data;
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     /// <summary>
     /// Implements aggregated functions for various types.

@@ -3,7 +3,7 @@
 using System;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     public interface ITUple
     {

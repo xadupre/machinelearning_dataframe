@@ -11,7 +11,7 @@ using Microsoft.ML.Runtime.Data;
 using Transforms = Microsoft.ML.Transforms;
 
 
-namespace Ext.Microsoft.ML.DataManipulation
+namespace Scikit.ML.DataFrame
 {
     class GenericScorerPipelineStep : ILearningPipelineDataStep
     {
