@@ -1,0 +1,44 @@
+environment:
+
+  global:
+    # SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the
+    # /E:ON and /V:ON options are not enabled in the batch script intepreter
+    # See: http://stackoverflow.com/a/13751649/163740
+    WITH_COMPILER: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_compiler.cmd"
+
+  matrix:
+
+    - PYTHON: "C:\\Python36-x64"
+      PYTHON_VERSION: "3.6.x"
+      PYTHON_ARCH: "64"
+
+init:
+  - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
+
+install:
+  - git submodule update --init
+  - set DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+build: off
+
+before_build:
+  - cmd: dotnet --version
+
+before_test:
+  - cmd /C dotnet build -c Debug
+  - cmd /C dotnet build -c Release
+  
+test_script:
+  - cmd /C dotnet test -c Debug TestMachineLearningExt
+  - cmd /C dotnet test -c Release TestMachineLearningExt
+
+after_test:
+  - if not exist dist mkdir dist
+  - if not exist dist\Release mkdir dist\Release
+  - if not exist dist\Debug mkdir dist\Debug
+  - copy DataManipulation\bin\Release\netstandard2.0\Microsoft.ML.Ext.DataManipulation* dist\Release
+  - copy DataManipulation\bin\Debug\netstandard2.0\Microsoft.ML.Ext.DataManipulation* dist\Debug
+
+artifacts:
+  - path: dist
+    name: machinelearningext

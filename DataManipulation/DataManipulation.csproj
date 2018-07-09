@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Microsoft.ML.Ext.DataManipulation</AssemblyName>
+    <RootNamespace>Microsoft.ML.Ext.DataManipulation</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="0.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.ML.Core">
+      <HintPath>..\..\machinelearning\dist\$(Configuration)\Microsoft.ML.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Data">
+      <HintPath>..\..\machinelearning\dist\$(Configuration)\Microsoft.ML.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML">
+      <HintPath>..\..\machinelearning\dist\$(Configuration)\Microsoft.ML.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Maml">
+      <HintPath>..\..\machinelearning\dist\$(Configuration)\Microsoft.ML.Maml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Api">
+      <HintPath>..\..\machinelearning\dist\$(Configuration)\Microsoft.ML.Api.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,119 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.4
+    
+    working_directory: ~/repo
+    
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum ".gitmodules" }}
+          - v1-dependencies-
+      
+      - run:
+          name: local-gen
+          command: |
+            sudo locale-gen en_US.UTF-8 || true
+            export LANG=en_US.UTF-8
+      
+      - run:
+          name: submodules
+          command: |
+            git submodule update --init
+            
+      - run:
+          name: install apt-transport-https
+          command: |
+            sudo apt-get update
+            sudo apt-get install apt-transport-https
+
+      - run:
+          name: install C++ dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install libunwind8 curl
+            sudo apt-get install libunwind8 liblttng-ust0 libcurl3 libuuid1 libkrb5-3 zlib1g
+            sudo apt-get install libssl1.0.0
+
+      - run:
+          name: install cmake
+          command: |
+            sudo apt-get install cmake
+            cmake --version
+
+      - run:
+          name: install dotnet
+          command: |
+            curl -sSL "https://packages.microsoft.com/keys/microsoft.asc" | sudo -E apt-key add -
+            echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-trusty-prod trusty main" | sudo tee -a /etc/apt/sources.list > /dev/null
+            sudo apt-get update
+            sudo -E apt-get -yq update &>> ~/apt-get-update.log
+            sudo -E apt-get -yqf --no-install-suggests --no-install-recommends --force-yes install dotnet-sdk-2.1.200
+
+      - run:
+          name: remove clang
+          command: |
+                    sudo apt-get remove clang
+
+      - run:
+          name: install clang 6.0
+          command: |
+                    wget  http://releases.llvm.org/6.0.0/clang+llvm-6.0.0-x86_64-linux-gnu-debian8.tar.xz
+                    tar xvf clang+llvm-6.0.0-x86_64-linux-gnu-debian8.tar.xz
+                    export PATH=/home/circleci/repo/clang+llvm-6.0.0-x86_64-linux-gnu-debian8/bin:$PATH
+                    sudo echo "export PATH=/home/circleci/repo/clang+llvm-6.0.0-x86_64-linux-gnu-debian8/bin:\$PATH" >> ~/.bashrc
+                    clang --version
+
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum ".gitmodules" }}
+
+      - run:
+          name: build machinelearning_dataframe debug
+          env:
+            DOTNET_CLI_TELEMETRY_OPTOUT:1
+          command: |
+            export DOTNET_CLI_TELEMETRY_OPTOUT=1
+            dotnet build -c Debug
+
+      - run:
+          name: run tests machinelearning_dataframe debug
+          env:
+            DOTNET_CLI_TELEMETRY_OPTOUT:1
+          command: |
+            export DOTNET_CLI_TELEMETRY_OPTOUT=1
+            dotnet test -c Debug TestMachineLearningExt
+
+      - run:
+          name: build machinelearning_dataframe release
+          env:
+            DOTNET_CLI_TELEMETRY_OPTOUT:1
+          command: |
+            export DOTNET_CLI_TELEMETRY_OPTOUT=1
+            dotnet build -c Release
+
+      - run:
+          name: run tests machinelearning_dataframe release
+          env:
+            DOTNET_CLI_TELEMETRY_OPTOUT:1
+          command: |
+            export DOTNET_CLI_TELEMETRY_OPTOUT=1
+            dotnet test -c Release TestMachineLearningExt
+            
+      - run:
+          name: copy artifacts
+          command: |
+            mkdir -p test-reports/dist
+            mkdir -p test-reports/dist/Debug
+            mkdir -p test-reports/dist/Release
+            cp -r  DataManipulation/bin/Release/netstandard2.0/Microsoft.ML.Ext.DataManipulation* test-reports/dist/Release
+            cp -r  DataManipulation/bin/Debug/netstandard2.0/Microsoft.ML.Ext.DataManipulation* test-reports/dist/Debug
+            
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
