@@ -1,5 +1,21 @@
 # DataFrame for ML.net
 
+
+[![TravisCI](https://travis-ci.org/xadupre/machinelearning_dataframe.svg?branch=master)](https://travis-ci.org/xadupre/machinelearning_dataframe)
+[![Build status](https://ci.appveyor.com/api/projects/status/wob49me5x5n2c0jh?svg=true)](https://ci.appveyor.com/project/xadupre/machinelearning-dataframe)
+[![CircleCI](https://circleci.com/gh/xadupre/machinelearning_dataframe.svg?style=svg)](https://circleci.com/gh/xadupre/machinelearning_dataframe)
+
+This library provides an easy way to manipulate data
+with [ML.net](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+It implements a subsample of the [Pandas](https://pandas.pydata.org/)'s dataframes.
+It only represents dense datasets but provides usual functionalities such
+expressions with ``[]`` and joins, group by, or sort functionality.
+Many examples can be found in
+[TestDataManipulation.cs](https://github.com/xadupre/machinelearning_dataframe/blob/master/UnitTests/TestDataManipulation.cs).
+Below, the following examples shows how to interact
+with [ML.net](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+
+
 ### Example 1: inner API
 
 This example relies on the inner API, mostly used
