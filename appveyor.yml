@@ -29,8 +29,8 @@ before_test:
   - cmd /C dotnet build -c Release
   
 test_script:
-  - cmd /C dotnet test -c Debug TestMachineLearningExt
-  - cmd /C dotnet test -c Release TestMachineLearningExt
+  - cmd /C dotnet test -c Debug UnitTests
+  - cmd /C dotnet test -c Release UnitTests
 
 after_test:
   - if not exist dist mkdir dist

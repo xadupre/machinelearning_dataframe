@@ -61,5 +61,5 @@ before_script:
   - dotnet build -c Release
 
 script:
-  - dotnet test -c Debug TestMachineLearningExt
-  - dotnet test -c Release TestMachineLearningExt
+  - dotnet test -c Debug UnitTests
+  - dotnet test -c Release UnitTests
