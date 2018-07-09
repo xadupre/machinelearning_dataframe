@@ -21,11 +21,6 @@ jobs:
             export LANG=en_US.UTF-8
       
       - run:
-          name: submodules
-          command: |
-            git submodule update --init
-            
-      - run:
           name: install apt-transport-https
           command: |
             sudo apt-get update
@@ -52,7 +47,7 @@ jobs:
             echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-trusty-prod trusty main" | sudo tee -a /etc/apt/sources.list > /dev/null
             sudo apt-get update
             sudo -E apt-get -yq update &>> ~/apt-get-update.log
-            sudo -E apt-get -yqf --no-install-suggests --no-install-recommends --force-yes install dotnet-sdk-2.1.301
+            sudo -E apt-get -yqf --no-install-suggests --no-install-recommends --force-yes install dotnet-sdk-2.1
 
       - run:
           name: remove clang
