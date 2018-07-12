@@ -553,20 +553,71 @@ namespace Scikit.ML.DataFrame
             {
                 return _cont._naming.TryGetValue(name, out col);
             }
+
             public ColumnType GetColumnType(int col) { return SchemaHelper.DataKind2ColumnType(_cont._kinds[col]); }
+
             public ColumnType GetMetadataTypeOrNull(string kind, int col)
             {
                 if (kind == _cont._kinds[col].ToString())
                     return GetColumnType(col);
                 return null;
             }
+
+            string[] GetSlotNames(int col)
+            {
+                string name = GetColumnName(col);
+                var type = GetColumnType(col);
+                if (type.IsVector)
+                {
+                    var vec = type.AsVector;
+                    if (vec.DimCount != 1)
+                        throw Contracts.ExceptNotImpl("Only one dimension is implemented.");
+                    var res = new string[vec.GetDim(0)];
+                    for (int i = 0; i < res.Length; ++i)
+                        res[i] = string.Format("{0}{1}", name, i);
+                    return res;
+                }
+                else
+                    return new string[] { name };
+            }
+
             public void GetMetadata<TValue>(string kind, int col, ref TValue value)
             {
-                throw new NotImplementedException();
+                if (kind == MetadataUtils.Kinds.SlotNames)
+                {
+                    var res = GetSlotNames(col);
+                    DvText[] dres = new DvText[res.Length];
+                    for (int i = 0; i < res.Length; ++i)
+                        dres[i] = new DvText(res[i]);
+                    var vec = new VBuffer<DvText>(res.Length, dres);
+                    ValueGetter<VBuffer<DvText>> conv = (ref VBuffer<DvText> val) => { val = vec; };
+                    var conv2 = conv as ValueGetter<TValue>;
+                    conv2(ref value);
+                    return;
+                }
+
+                int index;
+                if (TryGetColumnIndex(kind, out index))
+                {
+                    if (typeof(TValue) == typeof(DvText))
+                    {
+                        ValueMapper<string, DvText> convs = (ref string src, ref DvText dst) =>
+                        {
+                            dst = new DvText(src);
+                        };
+                        var convs2 = convs as ValueMapper<string, TValue>;
+                        convs2(ref kind, ref value);
+                    }
+                }
+                else
+                    throw new IndexOutOfRangeException();
             }
+
             public IEnumerable<KeyValuePair<string, ColumnType>> GetMetadataTypes(int col)
             {
-                throw new NotImplementedException();
+                if (col < 0 || col >= _cont.ColumnCount)
+                    throw new IndexOutOfRangeException();
+                yield return new KeyValuePair<string, ColumnType>(_cont._names[col], SchemaHelper.DataKind2ColumnType(_cont._kinds[col]));
             }
         }
 
