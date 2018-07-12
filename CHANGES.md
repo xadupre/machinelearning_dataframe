@@ -1,6 +1,6 @@
 # History
 
-Version numbers refers to [ML.net]()
+Version numbers refers to [ML.net](https://www.nuget.org/packages/Microsoft.ML/)
 version numbers.
 
 ## Version 0.3.0.1 (10/12/2018)
