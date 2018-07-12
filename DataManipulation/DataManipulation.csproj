@@ -5,7 +5,7 @@
     <AssemblyName>Scikit.ML.DataFrame</AssemblyName>
     <RootNamespace>Scikit.ML.DataFrame</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.3.0</Version>
+    <Version>0.3.0.1</Version>
     <Description>This library provides an easy way to manipulate data with Microsoft.ML. It implements a subsample of the pandas dataframes interface. It only represents dense datasets but provides usual functionalities such as expressions with ``[]`` and joins, group by, or sort functionalities.</Description>
     <PackageProjectUrl>https://github.com/xadupre/machinelearning_dataframe</PackageProjectUrl>
     <Copyright></Copyright>

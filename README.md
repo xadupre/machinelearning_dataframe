@@ -15,6 +15,21 @@ Many examples can be found in
 Below, the following examples shows how to interact
 with [ML.net](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
+## Changes
+
+See [Changes](CHANGES.md).
+
+## Documentation
+
+The dataframe contains a set of typed columns. All values in one column
+must have the same type. Usually operators ``[]`` follows
+[pandas](https://pandas.pydata.org/pandas-docs/stable/indexing.html) API
+as well as with also ``loc`` and ``iloc``.
+Method ``Join``, ``GroupBy``, ``Sort`` with at most three columns.
+This limitations can easily be moved but cannot be infinite.
+Whenever possible, the methods return a view on the original DataFrame,
+a view is subset of rows and columns. The view is not necessarily smaller
+than the original data.
 
 ### Example 1: inner API
 
