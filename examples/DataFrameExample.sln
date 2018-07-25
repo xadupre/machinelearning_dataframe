@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFrameExample", "DataFrame\DataFrameExample.csproj", "{1F3267A2-7B3D-40BC-A030-3D33D659DE74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupBy_Plot", "GroupBy_Plot\GroupBy_Plot.csproj", "{81BD059C-A2D0-4CA9-A61B-27980DE92199}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F3267A2-7B3D-40BC-A030-3D33D659DE74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F3267A2-7B3D-40BC-A030-3D33D659DE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F3267A2-7B3D-40BC-A030-3D33D659DE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F3267A2-7B3D-40BC-A030-3D33D659DE74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81BD059C-A2D0-4CA9-A61B-27980DE92199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81BD059C-A2D0-4CA9-A61B-27980DE92199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81BD059C-A2D0-4CA9-A61B-27980DE92199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81BD059C-A2D0-4CA9-A61B-27980DE92199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

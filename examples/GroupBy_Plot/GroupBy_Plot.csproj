@@ -2,13 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>DataFrameExample</AssemblyName>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OxyPlot.Core" Version="1.0.0" />
-    <PackageReference Include="OxyPlot.Wpf" Version="1.0.0" />
+    <PackageReference Include="OxyPlot.Core" Version="2.0.0-unstable1035" />
     <PackageReference Include="Scikit.ML.DataFrame" Version="0.3.0.1" />
   </ItemGroup>
 
