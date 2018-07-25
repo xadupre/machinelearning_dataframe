@@ -29,7 +29,8 @@ Method ``Join``, ``GroupBy``, ``Sort`` with at most three columns.
 This limitations can easily be moved but cannot be infinite.
 Whenever possible, the methods return a view on the original DataFrame,
 a view is subset of rows and columns. The view is not necessarily smaller
-than the original data.
+than the original data. Below, some very simple examples, next
+[examples](README.rst) more complete examples.
 
 ### Example 1: inner API
 
