@@ -64,7 +64,8 @@ namespace Scikit.ML.DataFrame
         public string LoadName => _loadName;
         public ITrainer Trainer => _trainer;
         public PredictionKind PredictionKind => _trainer.PredictionKind;
-        public IPredictor CreatePredictor() { return _trainer.CreatePredictor(); }
+        public IPredictor Train(TrainContext context) { return _trainer.Train(context); }
+        public TrainerInfo Info => _trainer.Info;
 
         #endregion
 
